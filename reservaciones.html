@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/funcionesReservaciones.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <nav class="bg-gradient-to-r from-purple-700 via-violet-700 to-blue-700">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=white&shade=500" alt="Your Company">
+                  </div>
+                  <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                      <a href="index.html" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Inicio</a>
+        
+                      <a href="gama.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Gamas</a>
+        
+                      <a href="car.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Carros</a>
+        
+                      <a href="clientes.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Clientes</a>
+        
+                      <a href="mensajes.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mensajes</a>
+
+                      <a href="reportes.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reportes</a>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="block xl:inline">Reservaciones</span>
+          </h1>
+
+
+
+          <section class="text-gray-400 bg-gray-900 body-font">
+            <div class="container px-5 py-24 mx-auto flex flex-wrap">
+              <div class="flex flex-wrap w-full">
+                <div class="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500 inline-flex items-center justify-center text-white relative z-10">
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">Paso 1</h2>
+                      <label class="leading-relaxed">Ingrese la fecha de Inicio de la reservación</label>
+                        <input type="date" id="startDate"><br>
+                    </div>
+                  </div>
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500 inline-flex items-center justify-center text-white relative z-10">
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">Paso 2</h2>
+                      <label>Ingrese la fecha de devolución del carro</label>
+                      <input type="date" id="devolutionDate"><br>
+                    </div>
+                  </div>
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500 inline-flex items-center justify-center text-white relative z-10">
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">Paso 3</h2>
+                      <label>Estatus de la reservación: completed or cancelled</label>
+                       <input type="text" id="status"><br>
+                    </div>
+                  </div>
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500 inline-flex items-center justify-center text-white relative z-10">
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">Paso 4</h2>
+                      <h2>Seleccione un carro</h2>
+                      <select id="select-car"class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></select>
+                    </div>
+                  </div>
+                  <div class="flex relative">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500 inline-flex items-center justify-center text-white relative z-10">
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">Final</h2>
+                      <h2>Seleccione un cliente</h2>
+                      <select id="select-client" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></select>
+                    </div>
+                  </div>
+                </div>
+                <img class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12" src="https://res.cloudinary.com/dnl5bksdp/image/upload/v1665809986/37709b4b-3598-489b-8e8b-2dbe2a0264e8_nwrkoi.jpg" alt="step">
+              </div>
+            </div>
+            <div class="p-2 w-full">
+              <button onclick="postReservaciones()" class="flex mx-auto text-white bg-purple-500 border-0 py-2 px-8 focus:outline-none hover:bg-purple-600 rounded text-lg">Crear Reservacion</button>
+            </div>
+
+          </section>
+
+
+
+        <script type="text/javascript">
+            window.onload = getReservaciones_Car();
+        </script>
+
+        <script type="text/javascript">
+            window.onload = getReservaciones_Client();
+        </script>
+
+        <script type="text/javascript">
+            window.onload = getReservaciones();
+        </script>
+
+        <div id="resultado1"></div>
+    </body>
+</html>
